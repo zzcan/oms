@@ -1,0 +1,137 @@
+@import '~antd/dist/antd.css';
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  height: 100%;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: auto;
+  background: url('./assets/login-left-bg.png') no-repeat top left, url('./assets/login-right-bg.png') no-repeat bottom right;
+}
+.content {
+  width: 964px;
+  height: 580px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #eee;
+  background: url('./assets/login-center-bg.png') no-repeat top right / contain;
+}
+
+.main .input-group {
+  padding: 50px 0 0 82px;
+}
+.input-group .title {
+  letter-spacing: 2px;
+  font-size: 28px;
+  color: #262626;
+  margin-bottom: 16px;
+}
+.input-group .subtitle {
+  color: #747474;
+  margin-bottom: 36px;
+}
+.main .logo {
+  height: 38px;
+  margin: 32px 0 0 32px;
+  background: url('./assets/xkd-logo-colored.png') no-repeat;
+}
+
+.login-form {
+  width: 300px;
+}
+.login-form .checkbox {
+  color: #03A9F4;
+}
+.login-form .login-btn-box .ant-form-item-children {
+  display: flex;
+  justify-content: space-between;
+}
+.login-form .login-form-button {
+  width: 160px;
+  height: 42px;
+  border-radius: 20px;
+  box-shadow: 0 0px 10px #03A9F4;
+}
+.login-form .ant-input {
+  padding-left: 0;
+  border-radius: 0;
+  height: 56px;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+}
+.login-form .ant-input:focus {
+  box-shadow: initial;
+}
+.login-form .ant-form-explain {
+  margin-top: 10px;
+}
+.login-form .has-error .ant-input:not([disabled]) {
+  border-color: #f5222d;
+}
+.ant-btn-primary {
+  background-color: #03A9F4;
+  border-color: #03A9F4;
+}
+.ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-indeterminate .ant-checkbox-inner {
+  background-color: #03A9F4;
+  border-color: #03A9F4;
+}
+
+.ant-spin-spinning {
+  display: block;
+  margin: 40px auto;
+}
+
+.common-page-layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background: #f7f7f7;
+}
+.list-content {
+  width: 1052px;
+  margin-top: 136px;
+}
+.list-content .title {
+  font-size: 30px;
+  color: #262626;
+  text-align: center;
+}
+.list-content .list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 344px;
+  overflow: auto;
+  margin-top: 74px;
+}
+.list .link {
+  display: inline-block;
+  width: 320px;
+  height: 140px;
+  margin-bottom: 32px;
+  margin-right: 24px;
+}
+.list .link .ant-card {
+  width: 320px;
+  height: 140px;
+  border: none;
+  border-radius: 8px;
+}
+.list .link:hover {
+  box-shadow: 0 0 40px #eee;
+}
+.list .link:active {
+  color: transparent;
+}
+.list .link .name {
+  font-size: 18px;
+  color: #262626;
+  margin-bottom: 16px;
+}

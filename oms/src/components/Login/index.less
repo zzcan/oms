@@ -1,0 +1,33 @@
+@import '~antd/lib/style/themes/default.less';
+
+.login-form {
+  width: 300px;
+  .checkbox {
+    color: @primary-color;
+  }
+  .login-form-button {
+    width: 160px;
+    height: 42px;
+    border-radius: 20px;
+    box-shadow: 0 0px 10px @primary-color;
+    margin-left: 52px;
+  }
+  :global {
+    .ant-input {
+      padding-left: 0;
+      border-radius: 0;
+      height: 56px;
+      border: none;
+      border-bottom: 1px solid #d9d9d9;
+    }
+    .ant-input:focus {
+      box-shadow: initial;
+    }
+    .ant-form-explain {
+      margin-top: 10px;
+    }
+    .has-error .ant-input:not([disabled]) {
+      border-color: #f5222d;
+    }
+  }
+}

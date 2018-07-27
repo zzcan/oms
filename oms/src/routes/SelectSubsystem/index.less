@@ -1,0 +1,44 @@
+// @import '~antd/lib/style/themes/default.less';
+@font-color: #262626;
+.content {
+  width: 1052px;
+  margin-top: 136px;
+  .title {
+    font-size: 30px;
+    color: @font-color;
+    text-align: center;
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    height: 344px;
+    overflow: auto;
+    margin-top: 74px;
+    .link {
+      display: inline-block;
+      width: 320px;
+      height: 140px;
+      margin-bottom: 32px;
+      margin-right: 24px;
+      &:hover {
+        box-shadow: 0 0 40px #eee;
+      }
+      &:active {
+        color: transparent;
+      }
+      :global {
+        .ant-card {
+          width: 320px;
+          height: 140px;
+          border: none;
+          border-radius: 8px;
+        }
+      }
+      .name {
+        font-size: 18px;
+        color: @font-color;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

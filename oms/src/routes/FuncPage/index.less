@@ -1,0 +1,60 @@
+.content {
+  background: #fff;
+  padding: 24px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+}
+.class-manage {
+  margin-left: 20px;
+  color: @primary-color;
+  font-size: 12px;
+  cursor: pointer;
+}
+.class-modal {
+  :global {
+    .ant-modal-body {
+      height: 500px;
+      overflow: auto;
+    }
+  }
+}
+.add-page-modal {
+  :global {
+    .ant-form-vertical .ant-form-item-label {
+      padding: 4px 0 0;
+      text-align: right;
+      margin-left: -20px;
+      margin-right: 8px;
+    }
+  }
+}
+
+:global {
+  .editable-cell {
+    position: relative;
+  }
+
+  .editable-cell-value-wrap {
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+
+  .editable-row:hover .editable-cell-value-wrap {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 4px 11px;
+  }
+}
+
+.class-table-box {
+  position: relative;
+  .add-input {
+    position: absolute;
+    width: 150px;
+    bottom: 15px;
+    left: 0;
+  }
+}

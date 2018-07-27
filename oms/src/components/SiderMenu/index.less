@@ -1,0 +1,81 @@
+@import '~antd/lib/style/themes/default.less';
+@ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+.logo {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  position: relative;
+  padding-left: (@menu-collapsed-width - 20px) / 2;
+  transition: all 0.3s;
+  background: #002140;
+  overflow: hidden;
+  &.logo1 {
+    padding-left: 0;
+    justify-content: center;
+  }
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+  }
+  .logo-text {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-left: 10px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 3px;
+    background: #03a9f4;
+    vertical-align: -2px;
+    transition: all .5s;
+  }
+}
+
+.sider {
+  min-height: 100vh;
+  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+  position: relative;
+  z-index: 10;
+  &.ligth {
+    background-color: white;
+    .logo {
+      background: white;
+      h1 {
+        color: #002140;
+      }
+    }
+  }
+}
+
+.icon {
+  width: 14px;
+  margin-right: 10px;
+}
+
+:global {
+  .drawer .drawer-content {
+    background: #001529;
+  }
+  .ant-menu-inline-collapsed {
+    & > .ant-menu-item .sider-menu-item-img + span,
+    &
+      > .ant-menu-item-group
+      > .ant-menu-item-group-list
+      > .ant-menu-item
+      .sider-menu-item-img
+      + span,
+    & > .ant-menu-submenu > .ant-menu-submenu-title .sider-menu-item-img + span {
+      max-width: 0;
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+  .ant-menu-item .sider-menu-item-img + span,
+  .ant-menu-submenu-title .sider-menu-item-img + span {
+    transition: opacity 0.3s @ease-in-out, width 0.3s @ease-in-out;
+    opacity: 1;
+  }
+}
