@@ -43,4 +43,20 @@ body {
   .ant-menu-item {
     padding-left: 48px!important;
   }
+  .ant-menu-inline-collapsed>.ant-menu-item-group>.ant-menu-item-group-list>.ant-menu-item i+span, .ant-menu-inline-collapsed>.ant-menu-item i+span, .ant-menu-inline-collapsed>.ant-menu-submenu>.ant-menu-submenu-title i+span {
+    max-width: 0;
+    display: inline-block;
+    opacity: 0;
+  }
+  .ant-menu-item i+span, .ant-menu-submenu-title i+span {
+    -webkit-transition: opacity .3s cubic-bezier(.645,.045,.355,1),width .3s cubic-bezier(.645,.045,.355,1);
+    transition: opacity .3s cubic-bezier(.645,.045,.355,1),width .3s cubic-bezier(.645,.045,.355,1);
+    opacity: 1;
+  }
+  .ant-menu-item i, .ant-menu-submenu-title i {
+    min-width: 14px;
+    margin-right: 10px;
+    -webkit-transition: font-size .15s cubic-bezier(.215,.61,.355,1),margin .3s cubic-bezier(.645,.045,.355,1);
+    transition: font-size .15s cubic-bezier(.215,.61,.355,1),margin .3s cubic-bezier(.645,.045,.355,1);
+}
 }

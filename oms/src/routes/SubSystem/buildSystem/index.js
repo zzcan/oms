@@ -1,51 +1,41 @@
 import React, { PureComponent, Fragment } from 'react';
 import { Route, Redirect, Switch } from 'dva/router';
-import { Card, Steps } from 'antd';
+import { Card, Steps, Button } from 'antd';
 import styles from './style.less';
+import Step1 from './step1';
+import Step2 from './step2';
+import Step3 from './step3';
+import { connect } from 'dva';
 
 const { Step } = Steps;
 
+@connect(({ subsystem, loading }) => ({
+  subsystemInfo: subsystem.subsystemInfo,
+  currentStep: subsystem.currentStep
+}))
 export default class BuildSystem extends PureComponent {
-  getCurrentStep() {
-    const { location } = this.props;
-    const { pathname } = location;
-    const pathList = pathname.split('/');
-    switch (pathList[pathList.length - 1]) {
-      case 'info':
-        return 0;
-      case 'confirm':
-        return 1;
-      case 'result':
-        return 2;
-      default:
-        return 0;
-    }
-  }
 
   render() {
-    const { match, routerData, location } = this.props;
+    const { currentStep } = this.props;
+    let stepContent = null;
+    if(currentStep === 0) {
+      stepContent = <Step1 />;
+    }else if(currentStep === 1) {
+      stepContent = <Step2 />;
+    }else if(currentStep === 2) {
+      stepContent = <Step3 />;
+    }
     return (
       <div className={styles.container}>
         <Card bordered={false}>
           <Fragment>
-            <Steps current={1} className={styles.steps}>
+            <Steps current={currentStep} className={styles.steps}>
               <Step title="填写基本信息" />
               <Step title="配置子系统菜单" />
               <Step title="配置页面权限" />
               <Step title="完成" />
             </Steps>
-            <Switch>
-              {getRoutes(match.path, routerData).map(item => (
-                <Route
-                  key={item.key}
-                  path={item.path}
-                  component={item.component}
-                  exact={item.exact}
-                />
-              ))}
-              <Redirect exact from="/form/step-form" to="/form/step-form/info" />
-              <Route render={NotFound} />
-            </Switch>
+            <div className={styles.wrapper}>{stepContent}</div>
           </Fragment>
         </Card>
       </div>

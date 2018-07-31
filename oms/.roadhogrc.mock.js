@@ -9,6 +9,7 @@ const noProxy = process.env.NO_PROXY === 'true';
 const proxy = {
   // 支持值为 Object 和 Array
   'GET /api/(.*)': 'http://oms-deploy.yunmof.com/api/',
+  'POST /api/(.*)': 'http://oms-deploy.yunmof.com/api/',
   // 'GET /GetFuncPageList': getFuncPageList,
   'GET /GetSubsystemList': getSubsystemList,
   'POST /ChangeSubsystemInfo': (req, res) => {

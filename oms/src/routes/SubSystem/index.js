@@ -86,7 +86,7 @@ class EditableTable extends React.Component {
   };
 
   handleAdd = () => {
-    const { dispatch } = this.state;
+    const { dispatch } = this.props;
     dispatch(routerRedux.push('/subsystem/buildsystem'));
   };
 

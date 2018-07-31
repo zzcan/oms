@@ -1,0 +1,32 @@
+.icon-modal {
+  :global {
+    .ant-modal-body {
+      height: 400px;
+      overflow: auto;
+    }
+  }
+  .icon-list {
+    display: flex;
+    flex-wrap: wrap;
+    .icon-item {
+      width: 48px;
+      height: 48px;
+      margin: 0 12px 12px 0;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      text-align: center;
+      line-height: 48px;
+      cursor: pointer;
+      &.selected {
+        border-color: @primary-color;
+        background: #E6FBFF;
+      }
+      & > i {
+        font-size: 24px;
+      }
+      &:hover {
+        border-color: @primary-color;
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { routerRedux } from 'dva/router';
 import { message } from 'antd';
 import { querySubsystemList, changeSubsystemInfo } from '../services/subsystem';
+import { queryIcons } from '../services/api';
 
 export default {
   namespace: 'subsystem',
@@ -14,6 +15,10 @@ export default {
       pageIndex: 1,
       pageSize: 10,
     },
+    subsystemInfo: {},
+    menus: [],
+    currentStep: 2,
+    iconList: []
   },
 
   effects: {
@@ -43,6 +48,15 @@ export default {
         });
       }
     },
+    *queryIcons(_, {call, put}) {
+      const response = yield call(queryIcons);
+      if(response.Code === 0) {
+        yield put({
+          type: 'saveIconList',
+          payload: response.Data
+        });
+      }
+    }
   },
 
   reducers: {
@@ -58,6 +72,30 @@ export default {
         ...state,
         fetchListParams: payload
       };
+    },
+    saveSubsystemInfo(state, { payload }) {
+      return {
+        ...state,
+        subsystemInfo: payload
+      }
+    },
+    saveStep(state, { payload }) {
+      return {
+        ...state,
+        currentStep: payload
+      }
+    },
+    saveIconList(state, { payload }) {
+      return {
+        ...state,
+        iconList: payload
+      }
+    },
+    saveMenus(state, { payload }) {
+      return {
+        ...state,
+        menus: payload
+      }
     },
   },
 };

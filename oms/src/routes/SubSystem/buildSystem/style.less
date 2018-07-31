@@ -1,5 +1,117 @@
 @import '~antd/lib/style/themes/default.less';
 
+.container {
+  background: #fff;
+  .steps {
+    max-width: 1000px;
+    margin: 16px auto;
+  }
+  .wrapper {
+    max-width: 600px;
+    margin: 40px auto 0;
+    .item {
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:hover {
+          .right {
+            display: block;
+          }
+        }
+        .left {
+          & > span {
+            margin-left: 10px;
+          }
+        }
+        .right {
+          display: none;
+          transition: all .1s;
+          & > i {
+            font-size: 16px;
+            cursor: pointer;
+          }
+          & > i:not(:first-child) {
+            margin-left: 10px;
+          }
+        }
+      }
+      :global {
+        .ant-divider-horizontal {
+          margin: 10px 0;
+        }
+      }
+      .list-item {
+        .list-item-name, .list-item-page, .action{
+          flex: 1;
+        }
+        .list-item-name {
+          .name-wrapper {
+            display: inline-block;
+            width: 100px;
+          }
+        }
+        .list-item-page {
+          :global {
+            .ant-tag {
+              margin-right: 0;
+            }
+          }
+        }
+        .action {
+          text-align: right;
+          &>span:first-child {
+            margin-right: 10px;
+          }
+          .delete-icon {
+            cursor: pointer;
+            display: none;
+          }
+        }
+        :global(.ant-list-item) {
+          &:hover {
+            .delete-icon {
+              display: inline-block;
+            }
+          }
+        }
+        .change {
+          color: @primary-color;
+          cursor: pointer;
+        }
+      }
+    }
+    .step2-btns {
+      width: 240px;
+      margin: 60px auto 0;
+      text-align: center;
+      & > button:first-child {
+        margin-right: 20px;
+      }
+    }
+    .menu-page-tag {
+      display: flex;
+      justify-content: space-between;
+    }
+    .select-page-box {
+      display: flex;
+      .plus-icon {
+        border: 1px dashed #d9d9d9;
+        background: #fff;
+      }
+    }
+    .table-col {
+      :global(.ant-table-row-expand-icon) {
+        display: none;
+      }
+    }
+  }
+}
+
+
 .stepForm {
   margin: 40px auto 0;
   max-width: 500px;
@@ -66,4 +178,34 @@
 
 .uppercase {
   font-size: 12px;
+}
+
+.add-menu-modal {
+  :global {
+    .ant-col-5 {
+      text-align: right;
+      margin-right: 16px;
+    }
+    .ant-row:not(:last-child) {
+      margin-bottom: 16px;
+    }
+    .ant-tag {
+      margin-right: 0;
+    }
+  }
+  .required {
+    &::before {
+      display: inline-block;
+      margin-right: 4px;
+      content: "*";
+      font-family: SimSun;
+      line-height: 1;
+      font-size: 14px;
+      color: #f5222d;
+    }
+  }
+  .select-page-btn {
+    color: @primary-color;
+    cursor: pointer;
+  }
 }

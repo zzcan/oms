@@ -3,6 +3,7 @@ import { Layout, Menu, Icon } from 'antd';
 import pathToRegexp from 'path-to-regexp';
 import { Link } from 'dva/router';
 import styles from './index.less';
+import iconStyles from '../../assets/fonts/iconfonts.less';
 import { urlToList } from '../_utils/pathTools';
 
 const { Sider } = Layout;
@@ -13,11 +14,13 @@ const { SubMenu } = Menu;
 //   icon: 'http://demo.com/icon.png',
 //   icon: <Icon type="setting" />,
 const getIcon = icon => {
+  let icon1 = 'icon-yunjisuan'
   if (typeof icon === 'string' && icon.indexOf('http') === 0) {
     return <img src={icon} alt="icon" className={`${styles.icon} sider-menu-item-img`} />;
   }
   if (typeof icon === 'string') {
-    return <Icon type={icon} />;
+    // return <Icon type={icon} />;
+    return <i className={`${iconStyles.iconfont} ${iconStyles[icon1]}`}></i>;
   }
   return icon;
 };

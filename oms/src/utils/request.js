@@ -73,21 +73,25 @@ export default function request(url, options) {
         //当前子系统不存在
         // 跳转404页面
         location.href = `${origin}/#404`;
+        return;
       }
       if (response.Code === 403001 || response.Code === 403002) {
         // 重新登录
         location.href = `${origin}/#login?returnUrl=${href}`;
+        return;
       }
       if (response.Code === 403003) {
         // 刷新页面
         location.reload();
+        return;
       }
       if(response.Code === 403004) {
         // 跳转403页面
         location.href = `${origin}/#403`;
+        return;
       }
       if(response.Code !== 0) {
-        message.error(response.Msg);
+        return message.error(response.Msg);
       }
       return response;
     })
